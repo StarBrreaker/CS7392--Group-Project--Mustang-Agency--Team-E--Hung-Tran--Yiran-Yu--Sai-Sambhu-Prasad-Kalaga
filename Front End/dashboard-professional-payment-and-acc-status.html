@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Mustang Agency - Professional</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light">Menu</div>
+      <div class="list-group list-group-flush">
+        <!-- <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-professional.html">Dashboard</a> -->
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-professional-profile-management.html">Profile Management</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-professional-request-job-matching.html">Request for Job Matching</a>
+        <a style="background-color:white; color:#4d9df1;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Payment Portal and Account
+          Status</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-professional-browse-all-jobs.html">Browse All Jobs Available</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-professional-change-password.html">Change Password</a>
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-outline-primary" id="sidebarToggle">☰</button>
+          &nbsp;&nbsp;&nbsp;
+          <div class="nav-item active"><a class="nav-link" href="index.html"><img src="assets/img/logo.png"
+                width="50rem">Mustang Agency</a></div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item active"><a class="nav-link" id="navProfessionalID"></a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+
+            </ul>
+            <button class="btn btn-outline-primary" id="sidebarToggle" onclick="signOut()">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container-fluid">
+        <br>
+        <h3 style="text-align: center;">Professional</h3>
+
+
+        <center>
+          <div class="row ">
+            <div class="col-sm-6" style="width: 1500pt">
+              <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                <div style="align-items: center;" class="card-body">
+                  <h5>Account Status</h5>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div onclick="" class="card shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="card-body">
+                          <form class="form-mf">
+                            <div class="row">
+                              <h6>Billing Information</h6>
+                              <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                  Account Type: Professional
+                                </div>
+                              </div>
+
+                              <div class="col-md-12 mb-3">
+                                <div class="form-group" >
+                                  <label for="paymentBalance">Payment Balance: </label>
+                                  <span id="paymentBalance"></span>
+                                </div>
+                              </div>
+                              <div class="col-md-12 mb-3">
+                                <div class="form-group" >
+                                  <label for="paymentStatus">Payment Status: </label>
+                                  <span id="paymentStatus"></span>
+                                </div>
+                              </div>
+                              <div class="col-md-12 mb-3">
+                                <div class="form-group" >
+                                  <label for="dueDate">Due Date: </label>
+                                  <span id="dueDate"></span>
+                                </div>
+                              </div>
+                              <div class="col-md-12 mb-3">
+                                <div class="form-group" >
+                                  <label for="nextBillingDate">Next Billing Date: </label>
+                                  <span id="nextBillingDate"></span>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div onclick="" class="card shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="card-body">
+                          <form class="form-mf">
+                            <div class="row">
+                              <h5>Benefits of Plan</h5>
+                              <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                  <b>Diverse Opportunities:</b> Professionals can work with various employers, enhancing their experience and exposure.
+                                </div>
+                              </div>
+                              <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                  <b>Earning Potential:</b> By working on multiple contracts, professionals can potentially earn more than in a fixed role.
+                                </div>
+                              </div>
+                              <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                  <b>Professional Growth:</b> Working in diverse settings allows professionals to develop and refine their skills across different environments.
+                                </div>
+                              </div>
+
+                            </div>
+                          </form>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form id="paymentForm">
+              <div class="row">
+                <div class="col-sm-6" style="width: 1500pt">
+                  <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                      <center>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <b>Payment Amount*</b>
+                            <input type="text" class="" id="amountPaid" placeholder="Amount"
+                              pattern="^\+?(0|[1-9]\d*)$" onkeyup="notEmpty()" required>
+                            <span id="paynumn" style="color: red;"></span>
+                          </div>
+                        </div>
+                        <button type="submit" id="processPayment" class="btn btn-outline-secondary">Pay</button>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </center>
+
+        <div class="row">
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <script>
+    function signOut() {
+      window.location = "index.html"
+    }
+    function notEmpty() {
+    var input = document.getElementById("amountPaid");
+    var regex = /^\+?(0|[1-9]\d*)$/; // Correct regex for matching non-negative numbers including zero
+
+    if (input.value === "") {
+        document.getElementById("paynumn").innerHTML = 'Payment amount should not be empty.';
+    } else if (!regex.test(input.value)) {
+        document.getElementById("paynumn").innerHTML = 'Payment amount should be a positive number or zero.';
+    } else {
+        document.getElementById("paynumn").innerHTML = '';
+    }
+  }
+    </script>
+  <script src="js/professional-payment-and-acc-status.js"></script>
+</body>
+
+</html>

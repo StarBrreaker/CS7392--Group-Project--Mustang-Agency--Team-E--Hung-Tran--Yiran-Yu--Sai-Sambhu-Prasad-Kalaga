@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Mustang Agency - Staff</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light">Menu</div>
+      <div class="list-group list-group-flush">
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard.html">Dashboard</a>
+        <a style="background-color:#4d9df1; color:white"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-account-management.html">Account Management</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-pending-account-requests.html">Pending Account Requests</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-company-acc-managemant.html">Manage Company Accounts</a>
+        <a style="background-color:white; color:#4d9df1;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-professional-acc-managemant.html">Manage Professional Accounts</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-job-matching-request.html">Job Matching Interface</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-payment-history-interface.html">Payment History</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-change-password.html">Change Password</a>
+        <!-- <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-account-creation.html">Staff Account Creation</a> -->
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-outline-primary" id="sidebarToggle">☰</button>
+          &nbsp;&nbsp;&nbsp;
+          <div class="nav-item active"><a class="nav-link" href="index.html"><img src="assets/img/logo.png"
+                width="50rem">Mustang Agency</a></div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item active"><a class="nav-link" id="navStaffID">Hi, Username (staff)</a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+
+            </ul>
+            <button class="btn btn-outline-primary" id="sidebarToggle" onclick="signOut()">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container-fluid">
+        <br>
+
+        <div class="row ">
+          <div class="col-sm-6">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="card-body">
+                <button onclick="proAccM()"="submit" class="btn btn-outline-primary">Back</button>
+                &nbsp;&nbsp;<br><br>
+                <h5>Professional Account Details</h5>
+                <form action="#!" style="text-align: right;">
+                  <button class="btn btn-primary" onclick="editButton()">
+                    <h7>Edit</h7>
+                  </button>
+                </form>
+
+                <br>
+                <form class="form-mf">
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        First Name: <input id="Profirstname" type="text" value="Sai Sambhu Prasad" onkeyup="notEmpty()"
+                          required readonly>
+                        <span id="pfn" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Last Name: <input id="Prolastname" type="text" value="Kalaga" onkeyup="notEmpty()" required
+                          readonly>
+                        <span id="pln" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Date of Birth: <input id="ProDOB" type="date" value="2001-09-27" onchange="validateDOB()"
+                          required readonly>
+                        <span id="pdob" style="color: red;"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        Email: <input id="ProEmail" type="text" value="skalaga@smu.edu" onkeyup="notEmpty()" required
+                          readonly>
+                        <br><span id="pe" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        Phone Number: <input id="ProPhone" type="text" onkeyup="phoneval()" value="(123)456-7890"
+                          readonly>
+                        <p id="warning" style="color: red;"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Address: <input id="Proaddress" type="text" value="Dallas, TX, 75205" onkeyup="notEmpty()"
+                          required readonly>
+                        <span id="padd" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        City/Town: <input id="Procity" type="text" value="Dallas" onkeyup="notEmpty()" required
+                          readonly>
+                        <span id="pcity" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        State: <input id="Prostate" type="text" value="Texas" onkeyup="notEmpty()" required readonly>
+                        <span id="pstate" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Zipcode: <input id="Prozipcode" type="text" value="75206" onkeyup="notEmpty()" required
+                          readonly>
+                        <span id="pzc" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Country: <input id="Procountry" type="text" value="USA" onkeyup="notEmpty()" required readonly>
+                        <span id="pcountry" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <label for = "professionalID">Username</label>
+                        <span id="professionalID"></span>
+                      </div>
+                    </div>
+                    <center>
+                      <h5>
+                        Qualifications&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </h5>
+                    </center>
+                    <!-- </div> -->
+                    <!-- <div class="col-md-6 mb-3"> -->
+                    <!-- <div class="form-group"> -->
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Degree:<input type="text" id="ProDegree" value="MS" onkeyup="notEmpty()" required
+                          readonly>
+                        <br><span id="pdegree" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Institution:<input type="text" id="ProInstitution" value="SMU" onkeyup="notEmpty()" required
+                          readonly>
+                        <br><span id="pinstitution" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Date of Award:<input type="month" id="ProDateAward" value="2025-05-25" onkeyup="notEmpty()"
+                          required readonly>
+                        <br><span id="pdateaward" style="color: red;"></span>
+                      </div>
+                    </div>  
+                    &nbsp;<label id="categoryLabel" for="categoryField"><b>Category</b></label>
+                    <input type="text" class="form-control input-mf" id="categoryField" placeholder="Name of Category"
+                      onkeyup="notEmpty()" />
+                    <span id="cl" style="color: red;"></span>
+
+                    &nbsp;<label id="keywordsLabel" for="keywordsField"><b>Keywords/ Key Phrases</b></label>
+                    <input type="text" class="form-control input-mf" id="keywordsField" onkeyup="notEmpty()"
+                      placeholder="List of Keywords/ Key Phrases seperated by commas" />
+                    <span id="kl" style="color: red;"></span>
+                    <br> &nbsp;
+
+                    <button id="addButton" onclick="add()" class="btn btn-outline-primary" disabled>Add</button>
+                    <br> &nbsp;
+
+                    <table id="myTable" style="text-align: center; border-width: 1pt; border-color: black;">
+                      <thead>
+                        <tr>
+                          <th>Category</th>
+                          <th>Keywords/ Key Phrases</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <!-- EMPTY-->
+                      </tbody>
+                    </table>
+
+
+
+
+                    <br>
+
+                    <div class="col-md-12">
+                      <br>
+                      <button type="submit" class="btn btn-outline-secondary" id="saveButton">Save</button>
+                      <span id="savesub" style="color: red;"></span>
+
+                      <hr class="my-4">
+                      <button type="submit" class="btn btn-secondary" style="background-color: darkred;" id="deactivate">Delete</button>
+
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="card-body">
+                <h5>Account Status</h5>
+                <br>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div onclick="" class="card shadow-lg p-3 mb-5 bg-white rounded">
+                      <div class="card-body">
+                        <form class="form-mf">
+                          <div class="row">
+                            <h6>Billing Information</h6>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                Account Type: Professional
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group" >
+                                <label for="paymentBalance">Payment Balance: </label>
+                                <span id="paymentBalance"></span>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group" >
+                                <label for="paymentStatus">Payment Status: </label>
+                                <span id="paymentStatus"></span>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group" >
+                                <label for="dueDate">Due Date: </label>
+                                <span id="dueDate"></span>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group" >
+                                <label for="nextBillingDate">Next Billing Date: </label>
+                                <span id="nextBillingDate"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div onclick="" class="card shadow-lg p-3 mb-5 bg-white rounded">
+                      <div class="card-body">
+                        <form class="form-mf">
+                          <div class="row">
+                            <h5>Benefits of Plan</h5>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                <b>Diverse Opportunities:</b> Professionals can work with various employers, enhancing their experience and exposure.
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                <b>Earning Potential:</b> By working on multiple contracts, professionals can potentially earn more than in a fixed role.
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                <b>Professional Growth:</b> Working in diverse settings allows professionals to develop and refine their skills across different environments.
+                              </div>
+                            </div>
+
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <script>
+    var count = 1;
+    var isEditClicked = false;
+    
+    function signOut() {
+      window.location = "index.html"
+    }
+    function proAccM() {
+      window.location = "dashboard-staff-professional-acc-managemant.html"
+    }
+
+    function add() {
+      var category = document.getElementById("categoryField").value;
+      var keyword = document.getElementById("keywordsField").value;
+
+      if (category == "") {
+        document.getElementById("cl").innerHTML = 'Category Should Not Be Empty';
+      } else {
+        document.getElementById("cl").innerHTML = '';
+      }
+
+      if (keyword == "") {
+        document.getElementById("kl").innerHTML = 'Keyword Should Not Be Empty';
+      } else {
+        document.getElementById("kl").innerHTML = '';
+      }
+
+      if (category.length == 0 || keyword.length == 0) {
+        return;
+      }
+
+      var table = document.getElementById("myTable");
+      var rowCount = table.rows.length;
+      var row = table.insertRow(rowCount++);
+      var col1 = row.insertCell(0);
+      var col2 = row.insertCell(1);
+      var col3 = row.insertCell(2);
+
+      col1.innerHTML = category;
+      col2.innerHTML = keyword;
+      if(isEditClicked)
+        col3.innerHTML = '<button onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+      else
+        col3.innerHTML = '<button disabled onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+
+      document.getElementById("categoryField").value = "";
+      document.getElementById("keywordsField").value = "";
+
+      return false;
+    }
+
+    function removeRow(btn) {
+      var row = btn.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+      count--;  // Decrement the count of rows
+    }
+
+    function validate() {
+      let flag = true;
+      let table = document.getElementById("myTable");
+      let rowCount = table.rows.length;
+      if (rowCount < 3) {
+        document.getElementById("savesub").innerHTML = 'Add Minimum 2 Qualifications';
+        flag = false;
+      } else {
+        document.getElementById("savesub").innerHTML = '';
+      }
+
+      return flag
+    }
+
+    function editButton() {
+      isEditClicked = true;
+      document.getElementById("Profirstname").removeAttribute('readonly');
+      document.getElementById("Prolastname").removeAttribute('readonly');
+      document.getElementById("ProDOB").removeAttribute('readonly');
+      document.getElementById("ProEmail").removeAttribute('readonly');
+      document.getElementById("ProPhone").removeAttribute('readonly');
+      document.getElementById("Proaddress").removeAttribute('readonly');
+      document.getElementById("Procity").removeAttribute('readonly');
+      document.getElementById("Prostate").removeAttribute('readonly');
+      document.getElementById("Prozipcode").removeAttribute('readonly');
+      document.getElementById("Procountry").removeAttribute('readonly');
+      document.getElementById("ProDegree").removeAttribute('readonly');
+      document.getElementById("ProInstitution").removeAttribute('readonly');
+      document.getElementById("ProDateAward").removeAttribute('readonly');
+      document.getElementById("categoryField")['disabled'] = false;
+      document.getElementById("keywordsField")['disabled'] = false;
+      document.getElementById("addButton")['disabled'] = false;
+      // document.getElementById("companyzipcode").removeAttribute('readonly');
+      // document.getElementById("companycountry").removeAttribute('readonly');
+      // document.getElementById("companywebsite").removeAttribute('readonly');
+      // document.getElementById("staffrole").removeAttribute('readonly');
+
+
+      var table = document.getElementById("myTable");
+      for (var i = 0, row; row = table.rows[i]; i++) {
+        for (var j = 0, col; col = row.cells[j]; j++) {
+          if(i > 0 && j == 2){
+            col.innerHTML = '<button onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+          }
+        }
+      }
+
+      notEmpty();
+    }
+    function phoneval() {
+      let flag = true;
+      var inputNumbersValue = document.getElementById("ProPhone").value.replace(/\D/g, ''); // Remove all non-digits
+      if (inputNumbersValue.length == 10) { // Ensure it does not exceed 10 digits
+        var formattedInputValue = '';
+        var x = inputNumbersValue.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        // Only format if there are at least some digits
+        if (x) {
+          // Construct the formatted string as per the matched groups
+          formattedInputValue = x[1] ? '(' + x[1] : '';
+          formattedInputValue += x[2] ? ')' + x[2] : '';
+          formattedInputValue += x[3] ? '-' + x[3] : '';
+        }
+        document.getElementById("ProPhone").value = formattedInputValue;
+        document.getElementById("warning").innerHTML = "";
+      } else {
+        document.getElementById("warning").innerHTML = "Should Have 10 Digits";
+        flag = false;
+      }
+      return flag;
+    }
+    function validateDOB() {
+      let flag = true;
+      var dob = document.getElementById("ProDOB").value;
+      var dobDate = new Date(dob);
+      var currentDate = new Date();
+      var today = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+      var maxDate = new Date();
+      maxDate.setFullYear(maxDate.getFullYear() - 120); // Calculate date 120 years back
+
+      if (dob === "") {
+        document.getElementById("pdob").innerHTML = 'DOB should not be empty';
+        flag = false;
+      } else if (dobDate >= today) {
+        document.getElementById("pdob").innerHTML = 'DOB cannot be a future date';
+        flag = false;
+      } else if (dobDate < maxDate) {
+        document.getElementById("pdob").innerHTML = 'DOB cannot be more than 120 years ago';
+        flag = false;
+      } else {
+        document.getElementById("pdob").innerHTML = '';  // Clear error message if input is valid
+        flag = true;
+      }
+
+      return flag;
+    }
+
+    function notEmpty() {
+      let flag = true;
+      if (document.getElementById("Profirstname").value == "") {
+        document.getElementById("pfn").innerHTML = 'First Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pfn").innerHTML = '';
+      }
+
+      if (document.getElementById("Prolastname").value == "") {
+        document.getElementById("pln").innerHTML = 'Last Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pln").innerHTML = '';
+      }
+
+      if (document.getElementById("ProDOB").value == "") {
+        document.getElementById("pdob").innerHTML = 'DOB Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pdob").innerHTML = '';
+      }
+
+      let emailp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      if ((document.getElementById("ProEmail").value == "") || (!emailp.test(document.getElementById("ProEmail").value))) {
+        document.getElementById("pe").innerHTML = 'Enter Valid Email';
+        flag = false;
+      } else {
+        document.getElementById("pe").innerHTML = '';
+      }
+
+      if (document.getElementById("ProDOB").value == "") {
+        document.getElementById("pdob").innerHTML = 'DOB Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pdob").innerHTML = '';
+      }
+
+      if (document.getElementById("Proaddress").value == "") {
+        document.getElementById("padd").innerHTML = 'Address Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("padd").innerHTML = '';
+      }
+
+      if (document.getElementById("Procity").value == "") {
+        document.getElementById("pcity").innerHTML = 'City Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pcity").innerHTML = '';
+      }
+
+      if (document.getElementById("Prostate").value == "") {
+        document.getElementById("pstate").innerHTML = 'State Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pstate").innerHTML = '';
+      }
+
+      if (document.getElementById("Prozipcode").value == "") {
+        document.getElementById("pzc").innerHTML = 'Zip Code Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pzc").innerHTML = '';
+      }
+
+      if (document.getElementById("Procountry").value == "") {
+        document.getElementById("pcountry").innerHTML = 'Country Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pcountry").innerHTML = '';
+      }
+      if (document.getElementById("ProDegree").value == "") {
+        document.getElementById("pdegree").innerHTML = 'Degree Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pdegree").innerHTML = '';
+      }
+      if (document.getElementById("ProInstitution").value == "") {
+        document.getElementById("pinstitution").innerHTML = 'Institution Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pinstitution").innerHTML = '';
+      }
+      if (document.getElementById("ProDateAward").value == "") {
+        document.getElementById("pdateaward").innerHTML = 'Date of Award Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pdateaward").innerHTML = '';
+      }
+
+      return (phoneval() && flag && validate() && validateDOB());
+    }
+
+    function init() {
+      // alert(document.getElementById("addButton").style.display);
+      console.log(document.getElementById("addButton")['disabled']);
+      // document.getElementById("categoryField").value = "Programming";
+      // document.getElementById("keywordsField").value = "C++, C"
+      // add()
+
+      // document.getElementById("categoryField").value = "Math";
+      // document.getElementById("keywordsField").value = "Calculus I, Calculus II"
+      // add()
+
+      if (isEditClicked === false) {
+        document.getElementById("categoryField")['disabled'] = true;
+        document.getElementById("keywordsField")['disabled'] = true;
+      }
+      // document.getElementById("element").style.display = "none";
+    }
+
+    init();
+  </script>
+  <script src="js/staff-professional-acc-management-viewdetails.js"></script>
+</body>
+
+</html>

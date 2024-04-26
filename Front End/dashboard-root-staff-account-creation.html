@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Mustang Agency - Root</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light">Menu</div>
+      <div class="list-group list-group-flush">
+        <!-- <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard.html">Dashboard</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-account-management.html">Account Management</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-pending-account-requests.html">Pending Account Requests</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-company-acc-managemant.html">Manage Company Accounts</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-professional-acc-managemant.html">Manage Professional Accounts</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-job-matching-interface.html">Job Matching Interface</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-payment-history-interface.html">Payment History</a> -->
+        <a style="background-color:white; color:#4d9df1;;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Staff Account Creation</a>
+        <a style="background-color:#4d9df1; color:white;;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-root-staff-account-management.html">Staff Account Management</a>
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-outline-primary" id="sidebarToggle">☰</button>
+          &nbsp;&nbsp;&nbsp;
+          <div class="nav-item active"><a class="nav-link" href="index.html"><img src="assets/img/logo.png"
+                width="50rem">Mustang Agency</a></div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item active"><a class="nav-link">Hi, Username (Root account)</a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+
+            </ul>
+            <button class="btn btn-outline-primary" id="sidebarToggle" onclick="signOut()">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container-fluid">
+        <br>
+
+        <div class="col-sm-6">
+          <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="card-body">
+              <div class="form-comments">
+                <div class="title-box-2">
+                  <h5 class="title-left">
+                    Staff Account Creation
+                  </h5>
+                  <!-- <form action="dashboard-staff-pending-account-requests-professional.html" style="text-align: right;">
+                                        <button class="btn btn-primary" type="submit"><h7>Professional Account Request</h7></button>
+                                      </form> -->
+                  <br>
+                </div>
+                <form class="form-mf" id="staffCreationForm">
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>First Name*</b>
+                        <input type="text" class="form-control input-mf" onkeyup="notEmpty()" id="stafffirstname"
+                          placeholder="Staff First Name" required>
+                        <span id="fn" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>Last Name*</b>
+                        <input type="text" class="form-control input-mf" onkeyup="notEmpty()" id="stafflastname"
+                          placeholder="Staff Last Name" required>
+                        <span id="ln" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>Date of Birth*</b>
+                        <input type="date" class="form-control input-mf" onkeyup="notEmpty()" id="staffdob"
+                          placeholder="Staff date of Birth" required>
+                        <span id="date" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>Phone Number*</b>
+                        <input type="text" class="form-control input-mf" onkeyup="notEmpty()" id="staffPhone"
+                          onchange="phoneval()" placeholder="Staff Phone Number" required>
+                        <p id="warning" style="color: red;"></p>
+                        <!-- <span id="ph" style="color: red;"></span> -->
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>Email Address*</b>
+                        <input type="email" class="form-control input-mf" onkeyup="notEmpty()" id="staffEmail"
+                          placeholder="Staff Email" required>
+                        <span id="em" style="color: red;"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>Staff Username*</b>
+                        <input type="text" class="form-control input-mf" onkeyup="notEmpty()" id="staffUsername"
+                          placeholder="Username" pattern="^[a-zA-Z][a-zA-Z0-9]{7,}" required
+                          title="Minimum 8 Characters And Should Start With Alphabet">
+                        <span id="cn" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <br>
+
+
+
+
+                    <br>
+
+                    <div class="col-md-12">
+                      <br>
+                      <button type="submit" class="btn btn-primary" id="">Create</button>
+                      <span id="savespan" style="color: red;"></span>
+                      <!-- <button type="submit" class="btn btn-secondary" onclick="companyReject()">Rejec</button> -->
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <script>
+    function signOut() {
+      window.location = "index.html"
+    }
+  </script>
+  <script>
+    function companyReject() {
+      window.location = "dashboard-staff-pending-account-requests-reject.html"
+    }
+
+    function phoneval() {
+      let flag = true;
+      var inputNumbersValue = document.getElementById("staffPhone").value.replace(/\D/g, ''); // Remove all non-digits
+      if (inputNumbersValue.length == 10) { // Ensure it does not exceed 10 digits
+        var formattedInputValue = '';
+        var x = inputNumbersValue.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        // Only format if there are at least some digits
+        if (x) {
+          // Construct the formatted string as per the matched groups
+          formattedInputValue = x[1] ? '(' + x[1] : '';
+          formattedInputValue += x[2] ? ')' + x[2] : '';
+          formattedInputValue += x[3] ? '-' + x[3] : '';
+        }
+        document.getElementById("staffPhone").value = formattedInputValue;
+        document.getElementById("warning").innerHTML = "";
+        flag = true;
+      } else {
+        document.getElementById("warning").innerHTML = "Should Have 10 Digits";
+        flag = false;
+      }
+      return flag;
+    }
+
+    function validateDOB() {
+      let flag = true;
+      var dob = document.getElementById("staffdob").value;
+      var dobDate = new Date(dob);
+      var currentDate = new Date();
+      var today = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+      var maxDate = new Date();
+      maxDate.setFullYear(maxDate.getFullYear() - 120); // Calculate date 120 years back
+
+      if (dob === "") {
+        document.getElementById("date").innerHTML = 'DOB should not be empty';
+        flag = false;
+      } else if (dobDate >= today) {
+        document.getElementById("date").innerHTML = 'DOB cannot be a future date';
+        flag = false;
+      } else if (dobDate < maxDate) {
+        document.getElementById("date").innerHTML = 'DOB cannot be more than 120 years ago';
+        flag = false;
+      } else {
+        document.getElementById("date").innerHTML = '';  // Clear error message if input is valid
+        flag = true;
+      }
+
+      return flag;
+    }
+
+    function notEmpty() {
+      let flag = true;
+      if (document.getElementById("stafffirstname").value == "") {
+        document.getElementById("fn").innerHTML = "First Name Should Not Be Empty";
+        flag = false;
+      } else {
+        document.getElementById("fn").innerHTML = "";
+      }
+
+      if (document.getElementById("stafflastname").value == "") {
+        document.getElementById("ln").innerHTML = "Last Name Should Not Be Empty";
+        flag = false;
+      } else {
+        document.getElementById("ln").innerHTML = "";
+      }
+
+      if (document.getElementById("staffEmail").value == "") {
+        document.getElementById("em").innerHTML = "Email Should Not Be Empty";
+        flag = false;
+      } else {
+        document.getElementById("em").innerHTML = "";
+      }
+
+      if (document.getElementById("staffUsername").value == "") {
+        document.getElementById("cn").innerHTML = "Username Should Not Be Empty";
+        flag = false;
+      } else {
+        document.getElementById("cn").innerHTML = "";
+      }
+      return flag && phoneval() && validateDOB();
+    }
+  </script>
+  <script src="js/root-staff-account-creation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Mustang Agency - Staff</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light">Menu</div>
+      <div class="list-group list-group-flush">
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard.html">Dashboard</a>
+        <a style="background-color:#4d9df1; color:white"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard-staff-account-management.html">Account Management</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-pending-account-requests.html">Pending Account Requests</a>
+        <a style="background-color:white; color:#4d9df1;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-company-acc-managemant.html">Manage Company Accounts</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-professional-acc-managemant.html">Manage Professional Accounts</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-job-matching-request.html">Job Matching Interface</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-payment-history-interface.html">Payment History</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard-staff-change-password.html">Change Password</a>
+        <!-- <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-account-creation.html">Staff Account Creation</a> -->
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-outline-primary" id="sidebarToggle">☰</button>
+          &nbsp;&nbsp;&nbsp;
+          <div class="nav-item active"><a class="nav-link" href="index.html"><img src="assets/img/logo.png"
+                width="50rem">Mustang Agency</a></div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item active"><a class="nav-link" id="navStaffID"></a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+
+            </ul>
+            <button class="btn btn-outline-primary" id="sidebarToggle" onclick="signOut()">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container-fluid">
+        <br>
+        <div class="row ">
+          <div class="col-sm-6">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="card-body">
+                <button onclick="comAccM()"="submit" class="btn btn-outline-primary">Back</button>
+                <br> &nbsp;
+                <h5>Company Account Details</h5>
+                <form action="#!" style="text-align: right;">
+                  <button class="btn btn-primary" onclick="editButton()">
+                    <h7>Edit</h7>
+                  </button>
+                </form>
+
+                <br>
+                <form class="form-mf">
+                  <div class="row">
+                    <h6>Company Information</h6>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Company Name: <input id="companyname" type="text" value="SMU" onkeyup="notEmpty()" required readonly>
+                        <br>
+                        <span id="cn" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Regristration Number: <input id="companyregnumber" type="text" value="12345" onkeyup="notEmpty()" required readonly>
+                        <br><span id="rn" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Industry: <input id="companyindustry" type="text" value="University" onkeyup="notEmpty()" required readonly>
+                        <br><span id="ind" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Company Size: <input id="companysize" type="text" value="12000" onkeyup="notEmpty()" required readonly>
+                        <br><span id="csize" style="color: red;"></span>
+                      </div>
+                    </div>
+
+                    <h6>Conatct Information</h6>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        First Name: <input id="companyfirstname" type="text" value="Sai Sambhu Prasad" onkeyup="notEmpty()" required readonly>
+                        <br><span id="cfirstname" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        Last Name: <input id="companylastname" type="text" value="Kalaga" onkeyup="notEmpty()" required readonly>
+                        <br><span id="clastname" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        Email: <input id="companyemail" type="email" value="skalaga@smu.edu" onkeyup="notEmpty()" required readonly>
+                        <br><span id="em" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        Phone Number: <input id="companynumber" type="text" onkeyup="phoneval()" value="(123)456-7890" required readonly>
+                        <br><p id="warning" style="color: red;"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Address: <input id="companyaddress" type="text" value="Dallas, TX, 75205" onkeyup="notEmpty()" required readonly>
+                        <br><span id="cadd" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        City/Town: <input id="companycity" type="text" value="Dallas" onkeyup="notEmpty()" required readonly>
+                        <br><span id="ccity" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        State: <input id="companystate" type="text" value="Texas" onkeyup="notEmpty()" required readonly>
+                        <br><span id="cstate" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Zipcode: <input id="companyzipcode" type="text" value="75205" onkeyup="notEmpty()" required readonly>
+                        <br><span id="czip" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Country: <input id="companycountry" type="text" value="USA" onkeyup="notEmpty()" required readonly>
+                        <br><span id="ccountry" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Website: <input id="companywebsite" type="url" value="https://www.smu.edu/" onkeyup="notEmpty()" readonly>
+                        <br><span id="cweb" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <label for ="preferredUsername"> Username: </label>
+                        <span id="preferredUsername"></span>
+                      </div>
+                    </div>
+
+
+
+
+                    <br>
+
+                    <div class="col-md-12">
+                      <br>
+                      <button type="submit" class="btn btn-outline-secondary" id="saveButton">Save</button>
+                      <span id="savespan" style="color: red;"></span>
+                      <!-- <button onclick="editButton()" class="btn btn-outline-primary">Edit</button> -->
+
+                      <hr class="my-4">
+                      <button type="submit" class="btn btn-secondary" style="background-color: darkred;" id="deactivate">Delete</button>
+
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="card-body">
+                <h5>Account Status</h5>
+                <br>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div onclick="" class="card shadow-lg p-3 mb-5 bg-white rounded">
+                      <div class="card-body">
+                        <form class="form-mf">
+                          <div class="row">
+                            <h6>Billing Information</h6>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                Account Type: Company
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group" >
+                                <label for="paymentBalance">Payment Balance: </label>
+                                <span id="paymentBalance"></span>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group" >
+                                <label for="paymentStatus">Payment Status: </label>
+                                <span id="paymentStatus"></span>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group" >
+                                <label for="dueDate">Due Date: </label>
+                                <span id="dueDate"></span>
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group" >
+                                <label for="nextBillingDate">Next Billing Date: </label>
+                                <span id="nextBillingDate"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div onclick="" class="card shadow-lg p-3 mb-5 bg-white rounded">
+                      <div class="card-body">
+                        <form class="form-mf">
+                          <div class="row">
+                            <h5>Benefits of Plan</h5>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                <b>Flexibility:</b> Employers can hire professionals on a short-term basis, offering
+                                flexibility in staffing according to demand.
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                <b>Cost Efficiency:</b> There is no need to provide long-term benefits to contract
+                                professionals, reducing overall employment costs.
+                              </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <div class="form-group">
+                                <b>Access to Skills:</b> Employers gain access to a wide range of professionals with
+                                different skills, allowing for quick staffing of specialized roles.
+                              </div>
+                            </div>
+
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <script>
+    function signOut() {
+      window.location = "index.html"
+    }
+    function comAccM() {
+      window.location = "dashboard-staff-company-acc-managemant.html"
+    }
+
+    function editButton() {
+      isEditClicked = true;
+      document.getElementById("companyname").removeAttribute('readonly');
+      document.getElementById("companyregnumber").removeAttribute('readonly');
+      document.getElementById("companyindustry").removeAttribute('readonly');
+      document.getElementById("companysize").removeAttribute('readonly');
+      document.getElementById("companyfirstname").removeAttribute('readonly');
+      document.getElementById("companylastname").removeAttribute('readonly');
+      document.getElementById("companyemail").removeAttribute('readonly');
+      document.getElementById("companynumber").removeAttribute('readonly');
+      document.getElementById("companyaddress").removeAttribute('readonly');
+      document.getElementById("companycity").removeAttribute('readonly');
+      document.getElementById("companystate").removeAttribute('readonly');
+      document.getElementById("companyzipcode").removeAttribute('readonly');
+      document.getElementById("companycountry").removeAttribute('readonly');
+      document.getElementById("companywebsite").removeAttribute('readonly');
+      // document.getElementById("staffrole").removeAttribute('readonly');
+    }
+    function phoneval() {
+      let flag = true;
+      var inputNumbersValue = document.getElementById("companynumber").value.replace(/\D/g, ''); // Remove all non-digits
+      if (inputNumbersValue.length == 10) { // Ensure it does not exceed 10 digits
+        var formattedInputValue = '';
+        var x = inputNumbersValue.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        // Only format if there are at least some digits
+        if (x) {
+          // Construct the formatted string as per the matched groups
+          formattedInputValue = x[1] ? '(' + x[1] : '';
+          formattedInputValue += x[2] ? ')' + x[2] : '';
+          formattedInputValue += x[3] ? '-' + x[3] : '';
+        }
+        document.getElementById("companynumber").value = formattedInputValue;
+        document.getElementById("warning").innerHTML = "";
+      } else {
+        document.getElementById("warning").innerHTML = "Should Have 10 Digits";
+        flag = false;
+      }
+      return flag;
+    }
+
+    function notEmpty() {
+      let flag = true;
+
+      if (document.getElementById("companyname").value == "") {
+        document.getElementById("cn").innerHTML = 'Company Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cn").innerHTML = '';
+      }
+
+      let rn = document.getElementById("companyregnumber").value;
+
+      if ((rn == "") || (!/^[0-9]*$/.test(rn))) {
+        document.getElementById("rn").innerHTML = 'Registration Number Should Only Be Numbers and not empty';
+        flag = false;
+      } else {
+        document.getElementById("rn").innerHTML = '';
+      }
+
+      if (document.getElementById("companyindustry").value == "") {
+        document.getElementById("ind").innerHTML = 'Industry Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("ind").innerHTML = '';
+      }
+      if ((document.getElementById("companysize").value == "") || !(parseInt(document.getElementById("companysize").value) > 0)) {
+        document.getElementById("csize").innerHTML = 'Company Size Should Only Be Numbers and not empty';
+        flag = false;
+      } else {
+        document.getElementById("csize").innerHTML = '';
+      }
+
+      let emailp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      if ((document.getElementById("companyemail").value == "") || (!emailp.test(document.getElementById("companyemail").value))) {
+        document.getElementById("em").innerHTML = 'Enter Valid Email';
+        flag = false;
+      } else {
+        document.getElementById("em").innerHTML = '';
+      }
+
+      if (document.getElementById("companyfirstname").value == "") {
+        document.getElementById("cfirstname").innerHTML = 'First Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cfirstname").innerHTML = '';
+      }
+      if (document.getElementById("companylastname").value == "") {
+        document.getElementById("clastname").innerHTML = 'Last Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("clastname").innerHTML = '';
+      }
+      if (document.getElementById("companyaddress").value == "") {
+        document.getElementById("cadd").innerHTML = 'Address Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cadd").innerHTML = '';
+      }
+
+      if (document.getElementById("companycity").value == "") {
+        document.getElementById("ccity").innerHTML = 'City Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("ccity").innerHTML = '';
+      }
+
+      if (document.getElementById("companystate").value == "") {
+        document.getElementById("cstate").innerHTML = 'State Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cstate").innerHTML = '';
+      }
+
+      if (document.getElementById("companyzipcode").value == "") {
+        document.getElementById("czip").innerHTML = 'Zip Code Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("czip").innerHTML = '';
+      }
+
+      if (document.getElementById("companycountry").value == "") {
+        document.getElementById("ccountry").innerHTML = 'Country Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("ccountry").innerHTML = '';
+      }
+
+      if (document.getElementById("companywebsite").value == "") {
+        document.getElementById("cweb").innerHTML = 'Website Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cweb").innerHTML = '';
+      }
+      return (phoneval() && flag);
+    }
+  </script>
+  <script src="js/staff-company-acc-management-viewdetails.js"></script>
+</body>
+
+</html>

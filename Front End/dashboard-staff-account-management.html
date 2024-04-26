@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Mustang Agency - Staff</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light">Menu</div>
+      <div class="list-group list-group-flush">
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard.html">Dashboard</a>
+        <a style="background-color:white; color:#4d9df1;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Account Management</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-pending-account-requests.html">Pending Account Requests</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-company-acc-managemant.html">Manage Company Accounts</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-professional-acc-managemant.html">Manage Professional Accounts</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-job-matching-request.html">Job Matching Interface</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-payment-history-interface.html">Payment History</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard-staff-change-password.html">Change Password</a>
+        <!-- <a style="background-color:#4d9df1; color:white;"
+                    class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard-staff-account-creation.html">Staff Account Creation</a> -->
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-outline-primary" id="sidebarToggle">☰</button>
+          &nbsp;&nbsp;&nbsp;
+          <div class="nav-item active"><a class="nav-link" href="index.html"><img src="assets/img/logo.png"
+                width="50rem">Mustang Agency</a></div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item active"><a class="nav-link" id="navStaffID"></a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+
+            </ul>
+            <button class="btn btn-outline-primary" id="sidebarToggle" onclick="signOut()">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container-fluid">
+        <br>
+
+        <div class="row ">
+          <div class="col-sm-6">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="card-body">
+                <h5>Account information</h5>
+                <form action="#!" style="text-align: right;">
+                  <button class="btn btn-primary" onclick="editButton()">
+                    <h7>Edit</h7>
+                  </button>
+                </form>
+                <br>
+                <form class="form-mf">
+                  <div class="row">
+                    <h6>Personal Information</h6>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        First Name: <input id="stafffn" type="text" value="Sai Sambhu Prasad" readonly onkeyup="notEmpty()" required>
+                        <br>
+                        <span id="sfn" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Last Name: <input id="staffln" type="text" value="Kalaga" readonly onkeyup="notEmpty()" required>
+                        <br>
+                        <span id="sln" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Staff ID: <input id="staffid" type="text" value="49284735" readonly onkeyup="notEmpty()" required>
+                        <span id="sid" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3"> -->
+                      <div class="form-group">
+                        Date of Birth: <input id="staffdob" type="date" value="2001-09-27" readonly onchange="validateDOB()" required>
+                        <br>
+                        <span id="sdob" style="color: red;"></span>
+                        
+                      </div>
+                    </div>
+                    
+                    <h6>Contact Information</h6>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        Email Address: <input id="staffemail" type="text" value="skalaga@smu.edu" readonly onkeyup="notEmpty()" required>
+                        <br>
+                        <span id="semail" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        Phone Number: <input id="staffphnnum" type="text" onkeyup="phoneval()" value="(123)456-7890" readonly required>
+                        <br>
+                        <p id="warning" style="color: red;"></p>
+                      
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Address: <input id="staffaddress" type="text" value="Dallas, TX, 75205" readonly onkeyup="notEmpty()" required>
+                        <p id="sadd" style="color: red;"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        City/Town: <input id="staffcity" type="text" value="Dallas " readonly onkeyup="notEmpty()" required>
+                        <p id="scity" style="color: red;"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        State: <input id="staffstate" type="text" value="Texas" readonly onkeyup="notEmpty()" required>
+                        <p id="sstate" style="color: red;"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Zipcode: <input id="staffzipcode" type="text" value="75206" readonly onkeyup="notEmpty()" required>
+                        <p id="szip" style="color: red;"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Country: <input id="staffcountry" type="text" value="USA" readonly onkeyup="notEmpty()" required>
+                        <p id="scountry" style="color: red;"></p>
+                      </div>
+                    </div>
+                    <h6>Position Details</h6>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Department: <input id="staffdept" type="text" value="Executive " readonly>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Job Title: <input id="stafftitle" type="text" value="CEO" readonly>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Role: <input id="staffrole" type="text" value="Admin" readonly>
+                      </div>
+                    </div> -->
+                    <h6>Account Security</h6>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group" >
+                        <label for="preferredUsername">Username: </label>
+                        <span id="preferredUsername"></p>
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                          Password: ************
+                                        </div>
+                                      </div> -->
+                    <!-- <h6>Employeement Details</h6>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Date of Joining: 1st Febuary 2024
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        Employment Type: Full-Time
+                      </div>
+                    </div> -->
+
+
+                    <br>
+
+                    <div class="col-md-12">
+                      <br>
+                      <button type="submit" class="btn btn-secondary" id="saveButton">Save</button>
+                      <span id="savespan" style="color: red;"></span>
+                      <br><br>
+                      <hr>
+                      <center><strong>ACCOUNT DEACTIVATION </strong><br><br>
+                        <button type="submit" class="btn btn-outline-secondary">DEACTIVATE ACCOUNT REQUEST</button>
+                      </center>
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <script>
+    function signOut() {
+      window.location = "index.html"
+    }
+
+    function editButton() {
+      document.getElementById("stafffn").removeAttribute('readonly');
+      document.getElementById("staffln").removeAttribute('readonly');
+      // document.getElementById("staffid").removeAttribute('readonly');
+      document.getElementById("staffdob").removeAttribute('readonly');
+      document.getElementById("staffemail").removeAttribute('readonly');
+      document.getElementById("staffphnnum").removeAttribute('readonly');
+      // document.getElementById("staffaddress").removeAttribute('readonly');
+      // document.getElementById("staffcity").removeAttribute('readonly');
+      // document.getElementById("staffstate").removeAttribute('readonly');
+      // document.getElementById("staffzipcode").removeAttribute('readonly');
+      // document.getElementById("staffcountry").removeAttribute('readonly');
+      // document.getElementById("staffdept").removeAttribute('readonly');
+      // document.getElementById("stafftitle").removeAttribute('readonly');
+      // document.getElementById("staffrole").removeAttribute('readonly');
+    }
+    function phoneval() {
+      let flag = true;
+      var inputNumbersValue = document.getElementById("staffphnnum").value.replace(/\D/g, ''); // Remove all non-digits
+      if (inputNumbersValue.length == 10) { // Ensure it does not exceed 10 digits
+        var formattedInputValue = '';
+        var x = inputNumbersValue.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        // Only format if there are at least some digits
+        if (x) {
+          // Construct the formatted string as per the matched groups
+          formattedInputValue = x[1] ? '(' + x[1] : '';
+          formattedInputValue += x[2] ? ')' + x[2] : '';
+          formattedInputValue += x[3] ? '-' + x[3] : '';
+        }
+        document.getElementById("staffphnnum").value = formattedInputValue;
+        document.getElementById("warning").innerHTML = "";
+      } else {
+        document.getElementById("warning").innerHTML = "Should Have 10 Digits";
+        flag = false;
+      }
+      return flag;
+    }
+    function validateDOB() {
+      let flag = true;
+      var dob = document.getElementById("staffdob").value;
+      var dobDate = new Date(dob);
+      var currentDate = new Date();
+      var today = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+      var maxDate = new Date();
+      maxDate.setFullYear(maxDate.getFullYear() - 120); // Calculate date 120 years back
+
+      if (dob === "") {
+        document.getElementById("sdob").innerHTML = 'DOB should not be empty';
+        flag = false;
+      } else if (dobDate >= today) {
+        document.getElementById("sdob").innerHTML = 'DOB cannot be a future date';
+        flag = false;
+      } else if (dobDate < maxDate) {
+        document.getElementById("sdob").innerHTML = 'DOB cannot be more than 120 years ago';
+        flag = false;
+      } else {
+        document.getElementById("sdob").innerHTML = '';  // Clear error message if input is valid
+        flag = true;
+      }
+      return flag;
+    }
+
+    function notEmpty() {
+      let flag = true;
+      if (document.getElementById("stafffn").value == "") {
+        document.getElementById("sfn").innerHTML = 'First Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("sfn").innerHTML = '';
+      }
+
+      if (document.getElementById("staffln").value == "") {
+        document.getElementById("sln").innerHTML = 'Last Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("sln").innerHTML = '';
+      }
+
+      // if (document.getElementById("staffid").value == "") {
+      //   document.getElementById("sid").innerHTML = 'Staff ID Should Not Be Empty';
+      //   flag = false;
+      // } else {
+      //   document.getElementById("sid").innerHTML = '';
+      // }
+
+      let emailp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      if ((document.getElementById("staffemail").value == "") || (!emailp.test(document.getElementById("staffemail").value))) {
+        document.getElementById("semail").innerHTML = 'Enter Valid Email';
+        flag = false;
+      } else {
+        document.getElementById("semail").innerHTML = '';
+      }
+
+      // if (document.getElementById("staffaddress").value == "") {
+      //   document.getElementById("sadd").innerHTML = 'Address Should Not Be Empty';
+      //   flag = false;
+      // } else {
+      //   document.getElementById("sadd").innerHTML = '';
+      // }
+
+      // if (document.getElementById("staffcity").value == "") {
+      //   document.getElementById("scity").innerHTML = 'City Should Not Be Empty';
+      //   flag = false;
+      // } else {
+      //   document.getElementById("scity").innerHTML = '';
+      // }
+
+      // if (document.getElementById("staffstate").value == "") {
+      //   document.getElementById("sstate").innerHTML = 'State Should Not Be Empty';
+      //   flag = false;
+      // } else {
+      //   document.getElementById("sstate").innerHTML = '';
+      // }
+
+      // if (document.getElementById("staffzipcode").value == "") {
+      //   document.getElementById("szip").innerHTML = 'Zip Code Should Not Be Empty';
+      //   flag = false;
+      // } else {
+      //   document.getElementById("szip").innerHTML = '';
+      // }
+
+      // if (document.getElementById("staffcountry").value == "") {
+      //   document.getElementById("scountry").innerHTML = 'Country Should Not Be Empty';
+      //   flag = false;
+      // } else {
+      //   document.getElementById("scountry").innerHTML = '';
+      // }
+      return (phoneval() && flag && validateDOB());
+
+
+    }
+  </script>
+  <script src="js/staff-profile.js"> </script>
+
+</body>
+
+</html>

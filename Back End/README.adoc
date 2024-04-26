@@ -1,0 +1,63 @@
+:spring_version: current
+:spring_boot_version: 3.2.0
+:Controller: http://docs.spring.io/spring/docs/{spring_version}/javadoc-api/org/springframework/stereotype/Controller.html
+:SpringApplication: http://docs.spring.io/spring-boot/docs/{spring_boot_version}/api/org/springframework/boot/SpringApplication.html
+:toc:
+:icons: font
+:source-highlighter: prettify
+:project_id: gs-accessing-data-mysql
+
+== What You Need
+
+* https://dev.mysql.com/downloads/[MySQL] version 5.6 or better. If you have Docker
+installed, it might be useful to run the database as a
+https://hub.docker.com/_/mysql/[container].
+
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/prereq_editor_jdk_buildtools.adoc[]
+
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/how_to_complete_this_guide.adoc[]
+
+[[initial]]
+== Create the Database
+
+Open a terminal (command prompt in Microsoft Windows) and open a MySQL client as a user
+who can create new users.
+
+For example, on a Linux system, use the following command;
+
+====
+[source, sh]
+----
+$ sudo mysql --password
+----
+====
+
+NOTE: This connects to MySQL as `root` and allows access to the user from all hosts. This
+is *not the recommended way* for a production server.
+
+To create a new database, run the following commands at the `mysql` prompt:
+
+====
+[source,sql]
+----
+create database db_example; -- Creates the new database
+create user 'springuser'@'%' identified by 'ThePassword'; -- Creates the user
+grant all on db_example.* to 'springuser'@'%'; -- Gives all privileges to the new user on the newly created database
+----
+====
+
+== Create the `application.properties` File
+
+Spring Boot gives you defaults on all things. For example, the default database is `H2`.
+Consequently, when you want to use any other database, you must define the connection
+attributes in the `application.properties` file.
+
+Create a resource file called `src/main/resources/application.properties`, as the
+following listing shows:
+
+====
+[source, java]
+----
+include::src/main/resources/application.properties[]
+----
+====

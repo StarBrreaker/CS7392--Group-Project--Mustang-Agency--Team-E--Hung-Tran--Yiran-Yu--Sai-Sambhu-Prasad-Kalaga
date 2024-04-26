@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Mustang Agency - Company</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light">Menu</div>
+      <div class="list-group list-group-flush">
+        <!-- <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-company.html">Dashboard</a> -->
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-company-account-management.html">Account Management</a>
+        <a style="background-color:white; color:#4d9df1;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Post a New Job</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-company-job-posting-management.html">Job Posing Management</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-company-payment-and-acc-status.html">Payment Portal and Account Status</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-company-change-password.html">Change Password</a>
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-outline-primary" id="sidebarToggle">☰</button>
+          &nbsp;&nbsp;&nbsp;
+          <div class="nav-item active"><a class="nav-link" href="index.html"><img src="assets/img/logo.png"
+                width="50rem">Mustang Agency</a></div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item active"><a class="nav-link" id="navEmployerID"> </a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+
+            </ul>
+            <button class="btn btn-outline-primary" id="sidebarToggle" onclick="signOut()">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container-fluid">
+        <br>
+        <!-- <h3 style="text-align: center;">Company</h3> -->
+
+
+        <div class="row ">
+          <div class="col-sm-6">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="card-body">
+                <h5>Create a New Job</h5>
+                <br>
+                <form class="form-mf" id ="postJobForm">
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>Name of the Position*</b>
+                        <input type="text" class="form-control input-mf" id="companynewposition" placeholder="Position"
+                          onkeyup="notEmpty()" required>
+                        <span id="cnewp" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>Unique ID*</b>
+                        <input type="text" class="form-control input-mf" id="companynewuniqueid" placeholder="ID"
+                          onkeyup="notEmpty()" required>
+                        <span id="cnewjobid" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>First name of contact Person*</b>
+                        <input type="text" class="form-control input-mf" id="companynewfirstname"
+                          placeholder="First Name" onkeyup="notEmpty()" required>
+                        <span id="cnewfirstname" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>Last name of the contact Person*</b>
+                        <input type="text" class="form-control input-mf" id="companynewlastname" placeholder="Last Name"
+                          onkeyup="notEmpty()" required>
+                        <span id="cnewlastname" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>Email Address*</b>
+                        <input type="email" class="form-control input-mf" id="companynewemail" placeholder="Email"
+                          onkeyup="notEmpty()" required>
+                        <br><span id="cnewemail" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>Phone Number*</b>
+                        <input type="text" class="form-control input-mf" id="companynewPhone" onkeyup="phoneval()"
+                          placeholder="Phone Number" required>
+                        <br>
+                        <p id="warning" style="color: red;"></p>
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>City/Town*</b>
+                        <input id="companynewcity" class="form-control input-mf" type="text" placeholder="City"
+                          onkeyup="notEmpty()" required>
+                        <span id="cnewcity" style="color: red;"></span>
+                      </div>
+                    </div> -->
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>Start Date*</b>
+                        <input type="date" class="form-control input-mf" id="companynewstartdate" placeholder=""
+                        onkeyup="notEmpty()" required>
+                        <span id="cstartdate" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>End Date*</b>
+                        <input type="date" class="form-control input-mf" id="companynewenddate" placeholder="" onkeyup="notEmpty()" required>
+                        <span id="cenddate" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>Pay per hour($)*</b>
+                        <input type="text" class="form-control input-mf" id="companynewpayperhour" onkeyup="notEmpty()"
+                          pattern="^\+?(0|[1-9]\d*)$" placeholder="rate" required>
+                        <span id="cpayperhour" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>Start time (Every day)*</b>
+                        <input type="time" class="form-control input-mf" id="companynewstarttime" placeholder=""
+                        onkeyup="notEmpty()" required>
+                        <span id="cnewstarttime" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>End time (Every day)*</b>
+                        <input type="time" class="form-control input-mf" id="companynewendtime" placeholder="" onkeyup="notEmpty()" required>
+                        <span id="cnewendtime" style="color: red;"></span>
+                      </div>
+                    </div>
+
+                    <br>
+                    &nbsp;<h4>Qualifications</h4>
+                    <!-- </div> -->
+                    <!-- <div class="col-md-6 mb-3"> -->
+                    <!-- <div class="form-group"> -->
+                    &nbsp;<label id="categoryLabel" for="categoryField"><b>Category</b></label>
+                    <input type="text" class="form-control input-mf" id="categoryField" placeholder="Name of Category"
+                      />
+                    <span id="cl" style="color: red;"></span>
+
+                    &nbsp;<label id="keywordsLabel" for="keywordsField"><b>Keywords/ Key Phrases</b></label>
+                    <input type="text" class="form-control input-mf" id="keywordsField" 
+                      placeholder="List of Keywords/ Key Phrases seperated by commas" />
+                    <span id="kl" style="color: red;"></span>
+                    <br> &nbsp;
+
+                    <button id="addButton" onclick="add()" class="btn btn-outline-primary">Add</button>
+                    <br> &nbsp;
+
+                    <!-- </style> -->
+                    <table class="table table-hover" style="text-align: center;" id="myTable">
+                      <thead>
+                        <tr>
+                          <th>Category</th>
+                          <th>Keywords/ Key Phrases</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <!-- EMPTY-->
+                      </tbody>
+                    </table>
+                    <br>
+                    <br>
+
+                    <br>&nbsp;
+
+
+
+
+                    <br>
+
+                    <div class="col-md-12">
+                      <br>
+                      <p id="infodisplay" style="color: red;"></p>
+                      <br>
+                      <button id ="postJobForm" type="submit" onclick="validate()" class="btn btn-primary">Post</button>
+                      <!-- <button type="submit" class="btn btn-secondary" onclick="companyReject()">Rejec</button> -->
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <script>
+    function signOut() {
+      window.location = "index.html"
+    }
+
+  </script>
+  <!-- <script>
+    var count = 1;
+    var isEditClicked = false;
+    function add() {
+      var category = document.getElementById("categoryField").value;
+      var keyword = document.getElementById("keywordsField").value;
+
+      if (category == "") {
+        document.getElementById("cl").innerHTML = 'Category Should Not Be Empty';
+      } else {
+        document.getElementById("cl").innerHTML = '';
+      }
+
+      if (keyword == "") {
+        document.getElementById("kl").innerHTML = 'Keyword Should Not Be Empty';
+      } else {
+        document.getElementById("kl").innerHTML = '';
+      }
+
+      if (category.length == 0 || keyword.length == 0) {
+        return;
+      }
+
+      var table = document.getElementById("myTable");
+      var row = table.insertRow(count++);
+      var col1 = row.insertCell(0);
+      var col2 = row.insertCell(1);
+      var col3 = row.insertCell(2);
+
+      col1.innerHTML = category;
+      col2.innerHTML = keyword;
+      col3.innerHTML = '<button onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+
+      document.getElementById("categoryField").value = "";
+      document.getElementById("keywordsField").value = "";
+
+      return false;
+    }
+
+    function removeRow(btn) {
+      var row = btn.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+      count--;  // Decrement the count of rows
+    }
+
+
+    
+
+    function phoneval() {
+      var inputNumbersValue = document.getElementById("companynewPhone").value.replace(/\D/g, ''); // Remove all non-digits
+      if (inputNumbersValue.length == 10) { // Ensure it does not exceed 10 digits
+        var formattedInputValue = '';
+        var x = inputNumbersValue.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        // Only format if there are at least some digits
+        if (x) {
+          // Construct the formatted string as per the matched groups
+          formattedInputValue = x[1] ? '(' + x[1] : '';
+          formattedInputValue += x[2] ? ')' + x[2] : '';
+          formattedInputValue += x[3] ? '-' + x[3] : '';
+        }
+        document.getElementById("companynewPhone").value = formattedInputValue;
+        document.getElementById("warning").innerHTML = "";
+      } else {
+        document.getElementById("warning").innerHTML = "Should Have 10 Digits";
+      }
+    }
+    function editButton() {
+      document.getElementById("companynewposition").removeAttribute('readonly');
+      document.getElementById("companynewuniqueid").removeAttribute('readonly');
+      document.getElementById("companynewfirstname").removeAttribute('readonly');
+      document.getElementById("companynewlastname").removeAttribute('readonly');
+      document.getElementById("companynewemail").removeAttribute('readonly');
+      document.getElementById("companynewPhone").removeAttribute('readonly');
+      document.getElementById("companynewcity").removeAttribute('readonly');
+      document.getElementById("companynewstartdate").removeAttribute('readonly');
+      document.getElementById("companynewenddate").removeAttribute('readonly');
+      document.getElementById("companynewpayperhour").removeAttribute('readonly');
+      document.getElementById("companynewstarttime").removeAttribute('readonly');
+      document.getElementById("companynewendtime").removeAttribute('readonly');
+      document.getElementById("categoryField")['disabled'] = false;
+      document.getElementById("keywordsField")['disabled'] = false;
+      document.getElementById("addButton")['disabled'] = false;
+      var table = document.getElementById("myTable");
+      for (var i = 0, row; row = table.rows[i]; i++) {
+        for (var j = 0, col; col = row.cells[j]; j++) {
+          if(i > 0 && j == 2){
+            col.innerHTML = '<button onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+          }
+        }
+      }
+
+      notEmpty();
+
+    }
+    //   var table = document.getElementById("myTable");
+    //   for (var i = 0, row; row = table.rows[i]; i++) {
+    //     for (var j = 0, col; col = row.cells[j]; j++) {
+    //       if(i > 0 && j == 2){
+    //         col.innerHTML = '<button onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+    //       }
+    //     }
+    //   }
+
+    //   notEmpty();
+    // }
+
+    function notEmpty() {
+      let flag = true;
+      let todayDate = new Date().toISOString().split('T')[0];
+      if (document.getElementById("companynewposition").value == "") {
+        document.getElementById("cnewp").innerHTML = 'Name of the Position Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cnewp").innerHTML = '';
+      }
+
+      if (document.getElementById("companynewuniqueid").value == "") {
+        document.getElementById("cnewjobid").innerHTML = 'Unique ID Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cnewjobid").innerHTML = '';
+      }
+
+      if (document.getElementById("companynewfirstname").value == "") {
+        document.getElementById("cnewfirstname").innerHTML = 'First Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cnewfirstname").innerHTML = '';
+      }
+
+      if (document.getElementById("companynewlastname").value == "") {
+        document.getElementById("cnewlastname").innerHTML = 'Last Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cnewlastname").innerHTML = '';
+      }
+
+      let emailp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      if ((document.getElementById("companynewemail").value == "") || (!emailp.test(document.getElementById("companynewemail").value))) {
+        document.getElementById("cnewemail").innerHTML = 'Enter Valid Email';
+        flag = false;
+      } else {
+        document.getElementById("cnewemail").innerHTML = '';
+      }
+
+      // if (document.getElementById("companynewcity").value == "") {
+      //   document.getElementById("cnewcity").innerHTML = 'City Should Not Be Empty';
+      // } else {
+      //   document.getElementById("cnewcity").innerHTML = '';
+      // }
+
+      let startDate = document.getElementById("companynewstartdate").value;
+      let endDate = document.getElementById("companynewenddate").value;
+
+      if (startDate < todayDate) {
+        document.getElementById("cstartdate").innerHTML = 'Start date cannot be in the past';
+        flag = false;
+      } else {
+        document.getElementById("cstartdate").innerHTML = '';
+      }
+
+      if (endDate < todayDate) {
+        document.getElementById("cenddate").innerHTML = 'End date cannot be in the past';
+        flag = false;
+      } else {
+        document.getElementById("cenddate").innerHTML = '';
+      }
+
+      if (endDate < startDate) {
+        document.getElementById("cenddate").innerHTML = 'End date cannot be before start date';
+        flag = false;
+      } else if (!document.getElementById("cenddate").innerHTML.includes('in the past')) {
+        document.getElementById("cenddate").innerHTML = '';
+      }
+
+      if (document.getElementById("companynewpayperhour").value == "") {
+        document.getElementById("cpayperhour").innerHTML = 'Pay per hour($) Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cpayperhour").innerHTML = '';
+      }
+
+      let startTime = document.getElementById("companynewstarttime").value;
+      let endTime = document.getElementById("companynewendtime").value;
+
+      if (startTime && endTime && startTime >= endTime) {
+        document.getElementById("cnewstarttime").innerHTML = 'Start time must be earlier than end time';
+        document.getElementById("cnewendtime").innerHTML = 'End time must be later than start time';
+        flag = false;
+      } else {
+        document.getElementById("cnewstarttime").innerHTML = '';
+        document.getElementById("cnewendtime").innerHTML = '';
+      }
+
+      return flag;
+    }
+
+  
+    
+    function init() {
+    
+      console.log(document.getElementById("addButton")['disabled']);
+      if (isEditClicked === false) {
+          document.getElementById("categoryField")['disabled'] = true;
+          document.getElementById("keywordsField")['disabled'] = true;
+        }
+    }
+
+
+  </script> -->
+  <script src = "js/company-post-newjob.js"></script>
+</body>
+
+</html>

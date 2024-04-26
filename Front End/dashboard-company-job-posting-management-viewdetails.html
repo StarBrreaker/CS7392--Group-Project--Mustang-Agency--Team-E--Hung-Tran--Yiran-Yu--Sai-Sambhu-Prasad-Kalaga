@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Mustang Agency - Company</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light">Menu</div>
+      <div class="list-group list-group-flush">
+        <!-- <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-company.html">Dashboard</a> -->
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-company-account-management.html">Account Management</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-company-post-newjob.html">Post a New Job</a>
+        <a style="background-color:white; color:#4d9df1;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Job Posing Management</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-company-payment-and-acc-status.html">Payment Portal and Account Status</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard-company-change-password.html">Change Password</a>
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-outline-primary" id="sidebarToggle">☰</button>
+          &nbsp;&nbsp;&nbsp;
+          <div class="nav-item active"><a class="nav-link" href="index.html"><img src="assets/img/logo.png"
+                width="50rem">Mustang Agency</a></div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item active"><a class="nav-link" id="navEmployerID">Hi, Employer (Company)</a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+
+            </ul>
+            <button class="btn btn-outline-primary" id="sidebarToggle" onclick="signOut()">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container-fluid">
+        <br>
+        <!-- <h3 style="text-align: center;">Company</h3> -->
+
+
+        <div class="row ">
+          <div class="col-sm-6">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="card-body">
+                <button onclick="jobManage()" class="btn btn-outline-primary">Back</button>
+                <br>&nbsp;
+                <h5>Job Details</h5>
+                <form action="#!" style="text-align: right;">
+                  <button class="btn btn-primary" onclick="editButton()">
+                    <h7>Edit</h7>
+                  </button>
+                </form>
+                <br>
+                <form class="form-mf">
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <label for="companynewuniqueid"><b>Unique ID: </b></label>
+                      <span id="companynewuniqueid"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <!-- <b>Name of the position:</b> -->
+                      <label for="positionName"><b>Name of the position: </b></label>
+                      <span id="positionName"></span> 
+                      <!-- <input type="text" class="form-control input-mf" id="positionName" onchange="notEmpty()" value="12345"  readonly required>
+                      <span id="pn" style="color: red;"></span> -->
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <b>First name of contact Person:</b> 
+                      <input type="text" class="form-control input-mf" id="companynewfirstname" onkeyup="notEmpty()" value="Sambhu" readonly required>
+                      <span id="cfn" style="color: red;"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <b>Last name of the contact Person:</b> 
+                      <input type="text" class="form-control input-mf" id="companynewlastname" onkeyup="notEmpty()" value="Kalaga" readonly required>
+                      <span id="cln" style="color: red;"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <b>Email Address:</b> 
+                      <input type="email" class="form-control input-mf" id="companynewemail" onkeyup="notEmpty()" value="skalaga@smu.edu" readonly required>
+                      <span id="ce" style="color: red;"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <b>Phone Number:</b> 
+                      <input type="text" class="form-control input-mf" id="companynewPhone" onkeyup="phoneval()" value="272725267" readonly required>
+                      <p id="warning" style="color: red;"></p>
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <b>City/Town*</b>
+                      <input id="companynewcity" class="form-control input-mf" type="text" onkeyup="notEmpty()" value="Dallas" readonly required>
+                      <span id="cnc" style="color: red;"></span>
+                    </div>
+                  </div> -->
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <b>Start Date:</b> 
+                      <input type="date" class="form-control input-mf" id="companynewstartdate" onchange="notEmpty()" value="2024-02-20" readonly required>
+                      <span id="csd" style="color: red;"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <b>End Date:</b> 04/12/2024
+                      <input type="date" class="form-control input-mf" id="companynewenddate" onchange="notEmpty()" value="2024-04-20" readonly required>
+                      <span id="ced" style="color: red;"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <b>Pay per hour($):</b> 
+                      <input type="text" class="form-control input-mf" id="companynewpayperhour" onkeyup="notEmpty()" value="35" pattern="^\+?(0|[1-9]\d*)$" readonly required>
+                      <span id="cph" style="color: red;"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <b>Start time (Every day):</b>
+                      <input type="time" class="form-control input-mf" id="companynewstarttime" onchange="notEmpty()" value="09:00" readonly required>
+                      <span id="cst" style="color: red;"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <b>End time (Every day):</b>
+                      <input type="time" class="form-control input-mf" id="companynewendtime" onchange="notEmpty()" value="04:00" readonly required>
+                      <span id="cet" style="color: red;"></span>
+                    </div>
+                  </div>
+
+                  <br>
+                  &nbsp;<h4>Qualifications</h4>
+
+                  &nbsp;<label id="categoryLabel" for="categoryField"><b>Category</b></label>
+                    <input type="text" class="form-control input-mf" id="categoryField" placeholder="Name of Category"
+                       />
+                    <span id="cl" style="color: red;"></span>
+                    <br>
+                    &nbsp;<label id="keywordsLabel" for="keywordsField"><b>Keywords/ Key Phrases</b></label>
+                    <input type="text" class="form-control input-mf" id="keywordsField" 
+                      placeholder="List of Keywords/ Key Phrases seperated by commas" />
+                    <span id="kl" style="color: red;"></span>
+                    <br> &nbsp;
+
+                    <button id="addButton" onclick="add()" class="btn btn-outline-primary" disabled>Add</button>
+                    <br> &nbsp;
+
+                  <table class="table table-hover" style="text-align: center;" id="myTable">
+                    <thead>
+                      <tr>
+                        <th>Category</th>
+                        <th>Keywords/ Key Phrases</th>
+                        <th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- EMPTY-->
+                    </tbody>
+                    <tfoot>
+                      <!-- NO NEED-->
+
+                    </tfoot>
+                  </table>
+                  <br>
+                  <br>
+                  <br>
+                  <button type="submit" class="btn btn-outline-secondary" id="saveButton">Save</button>
+                  <span id="savespan" style="color: red;"></span>
+                  <br>&nbsp;
+                  <hr>
+                  <center>
+                    <button type="submit" class="btn btn-outline-secondary" id="deleteButton">Remove Job</button>
+
+
+                  </center>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <script>
+    var count = 1;
+    var isEditClicked = false;
+
+    function signOut() {
+      window.location = "index.html"
+    }
+
+    function add() {
+      var category = document.getElementById("categoryField").value;
+      var keyword = document.getElementById("keywordsField").value;
+
+      if (category == "") {
+        document.getElementById("cl").innerHTML = 'Category Should Not Be Empty';
+      } else {
+        document.getElementById("cl").innerHTML = '';
+      }
+
+      if (keyword == "") {
+        document.getElementById("kl").innerHTML = 'Keyword Should Not Be Empty';
+      } else {
+        document.getElementById("kl").innerHTML = '';
+      }
+
+      if (category.length == 0 || keyword.length == 0) {
+        return;
+      }
+
+      var table = document.getElementById("myTable");
+      var rowCount = table.rows.length;
+      var row = table.insertRow(rowCount++);
+      var col1 = row.insertCell(0);
+      var col2 = row.insertCell(1);
+      var col3 = row.insertCell(2);
+
+      col1.innerHTML = category;
+      col2.innerHTML = keyword;
+      // if(isEditClicked)
+        col3.innerHTML = '<button onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+      // else
+      //   col3.innerHTML = '<button disabled onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+
+      document.getElementById("categoryField").value = "";
+      document.getElementById("keywordsField").value = "";
+
+      return false;
+    }
+
+    function removeRow(btn) {
+      var row = btn.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+      count--;  // Decrement the count of rows
+    }
+
+    function validate() {
+      var table = document.getElementById("myTable");
+      var rowCount = table.rows.length - 1;
+      if (rowCount < 2) {
+        document.getElementById("savespan").innerHTML = 'Add Minimum 2 Qualifications';
+        return false;
+      } else {
+        document.getElementById("savespan").innerHTML = '';
+        return true;
+      }
+    }
+
+    function notEmpty() {
+      let flag = true;
+      let todayDate = new Date().toISOString().split('T')[0];
+
+      // if (document.getElementById("positionName").value == "") {
+      //   document.getElementById("pn").innerHTML = 'First Name Should Not Be Empty';
+      //   flag = false;
+      // } else {
+      //   document.getElementById("pn").innerHTML = '';
+      // }
+      if (document.getElementById("companynewfirstname").value == "") {
+        document.getElementById("cfn").innerHTML = 'First Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cfn").innerHTML = '';
+      }
+      if (document.getElementById("companynewlastname").value == "") {
+        document.getElementById("cln").innerHTML = 'Last Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("cln").innerHTML = '';
+      }
+      let emailp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      if ((document.getElementById("companynewemail").value == "") || (!emailp.test(document.getElementById("companynewemail").value))) {
+      document.getElementById("ce").innerHTML = 'Enter Valid Email';
+      flag = false;
+      } else {
+      document.getElementById("ce").innerHTML = '';
+      }
+
+      // if (document.getElementById("companynewemail").value == "") {
+      //   document.getElementById("ce").innerHTML = 'Email Should Not Be Empty';
+      //   flag = false;
+      // } else {
+      //   document.getElementById("ce").innerHTML = '';
+      // }
+      // if (document.getElementById("companynewcity").value == "") {
+      //   document.getElementById("cnc").innerHTML = 'City Should Not Be Empty';
+      //   flag = false;
+      // } else {
+      //   document.getElementById("cnc").innerHTML = '';
+      // }
+      
+
+
+      let startDate = document.getElementById("companynewstartdate").value;
+      let endDate = document.getElementById("companynewenddate").value;
+
+      if (startDate < todayDate) {
+        document.getElementById("csd").innerHTML = 'Start date cannot be in the past';
+        flag = false;
+      } else {
+        document.getElementById("csd").innerHTML = '';
+      }
+
+      if (endDate < todayDate) {
+        document.getElementById("ced").innerHTML = 'End date cannot be in the past';
+        flag = false;
+      } else {
+        document.getElementById("ced").innerHTML = '';
+      }
+
+      if ((document.getElementById("companynewpayperhour").value == "") || !(parseInt(document.getElementById("companynewpayperhour").value) > 0)) {
+        document.getElementById("cph").innerHTML = 'Payment Should Only Be Numbers and not empty';
+        flag = false;
+      } else {
+        document.getElementById("cph").innerHTML = '';
+      }
+
+      let startTime = document.getElementById("companynewstarttime").value;
+      let endTime = document.getElementById("companynewendtime").value;
+
+      
+      if (document.getElementById("companynewstarttime").value == "") {
+        console.log("Empty");
+        document.getElementById("cst").innerHTML = 'Start time cannot be empty';
+        flag = false;
+      } else {
+        document.getElementById("cst").innerHTML = '';
+      }
+
+      if (document.getElementById("companynewendtime").value == "") {
+        document.getElementById("cet").innerHTML = 'End time cannot be empty';
+        flag = false;
+      } else {
+        document.getElementById("cet").innerHTML = '';
+      }
+
+      if (startTime !== "" && endTime !== "") {
+        if (startTime >= endTime) {
+          document.getElementById("cst").innerHTML = 'Start time must be earlier than end time';
+          document.getElementById("cet").innerHTML = 'End time must be later than start time';
+          flag = false;
+        } else {
+          document.getElementById("cst").innerHTML = '';
+          document.getElementById("cet").innerHTML = '';
+        }
+      }
+
+      return (flag && phoneval() && validate())
+    }
+
+    function signOut() {
+      window.location = "index.html"
+    }
+    function jobManage() {
+      window.location = "dashboard-company-job-posting-management.html"
+    }
+
+    function editButton() {
+      document.getElementById("positionName").removeAttribute('readonly');
+      document.getElementById("companynewfirstname").removeAttribute('readonly');
+      document.getElementById("companynewlastname").removeAttribute('readonly');
+      document.getElementById("companynewemail").removeAttribute('readonly');
+      document.getElementById("companynewPhone").removeAttribute('readonly');
+      document.getElementById("companynewstartdate").removeAttribute('readonly');
+      document.getElementById("companynewenddate").removeAttribute('readonly');
+      document.getElementById("companynewpayperhour").removeAttribute('readonly');
+      document.getElementById("companynewstarttime").removeAttribute('readonly');
+      document.getElementById("companynewendtime").removeAttribute('readonly');
+      // document.getElementById("companynewcity").removeAttribute('readonly');
+      // document.getElementById("companyzipcode").removeAttribute('readonly');
+      // document.getElementById("companycountry").removeAttribute('readonly');
+      // document.getElementById("companywebsite").removeAttribute('readonly');
+      // document.getElementById("staffrole").removeAttribute('readonly');
+      
+      document.getElementById("categoryField")['disabled'] = false;
+      document.getElementById("keywordsField")['disabled'] = false;
+      document.getElementById("addButton")['disabled'] = false;
+
+      
+      var table = document.getElementById("myTable");
+      for (var i = 0, row; row = table.rows[i]; i++) {
+        for (var j = 0, col; col = row.cells[j]; j++) {
+          if(i > 0 && j == 2){
+            col.innerHTML = '<button onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+          }
+        }
+      }
+
+      notEmpty();
+      
+    }
+    function phoneval() {
+      let flag = true;
+      var inputNumbersValue = document.getElementById("companynewPhone").value.replace(/\D/g, ''); // Remove all non-digits
+      if (inputNumbersValue.length == 10) { // Ensure it does not exceed 10 digits
+        var formattedInputValue = '';
+        var x = inputNumbersValue.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        // Only format if there are at least some digits
+        if (x) {
+          // Construct the formatted string as per the matched groups
+          formattedInputValue = x[1] ? '(' + x[1] : '';
+          formattedInputValue += x[2] ? ')' + x[2] : '';
+          formattedInputValue += x[3] ? '-' + x[3] : '';
+        }
+        document.getElementById("companynewPhone").value = formattedInputValue;
+        document.getElementById("warning").innerHTML = "";
+      } else {
+        document.getElementById("warning").innerHTML = "Should Have 10 Digits";
+        flag = false;
+      }
+      return flag;
+
+    }
+
+    function init() {
+      // alert(document.getElementById("addButton").style.display);
+      console.log(document.getElementById("addButton")['disabled']);
+      // document.getElementById("categoryField").value = "Programming";
+      // document.getElementById("keywordsField").value = "Sambhu"
+      // add()
+
+      // document.getElementById("categoryField").value = "Math";
+      // document.getElementById("keywordsField").value = "Something"
+      // add()
+
+      if (isEditClicked === false) {
+        document.getElementById("categoryField")['disabled'] = true;
+        document.getElementById("keywordsField")['disabled'] = true;
+      }
+      // document.getElementById("element").style.display = "none";
+    }
+
+    init();
+  </script>
+  <script src="js/company-job-posting-managment-view-details.js"></script>
+</body>
+
+</html>

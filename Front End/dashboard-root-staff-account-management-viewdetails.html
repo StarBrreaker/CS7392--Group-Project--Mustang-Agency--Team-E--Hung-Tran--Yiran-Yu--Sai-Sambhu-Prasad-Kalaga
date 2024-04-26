@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Mustang Agency - Root</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light">Menu</div>
+      <div class="list-group list-group-flush">
+        <!-- <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard.html">Dashboard</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-account-management.html">Account Management</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-pending-account-requests.html">Pending Account Requests</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-company-acc-managemant.html">Manage Company Accounts</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-professional-acc-managemant.html">Manage Professional Accounts</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-job-matching-interface.html">Job Matching Interface</a>
+        <a style="background-color:#4d9df1; color:white;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-staff-payment-history-interface.html">Payment History</a> -->
+        <a style="background-color:#4d9df1; color:white;;"
+          class="list-group-item list-group-item-action list-group-item-light p-3" href="dashboard-root-staff-account-creation.html">Staff Account Creation</a>
+        <a style="background-color:white; color:#4d9df1;;"
+          class="list-group-item list-group-item-action list-group-item-light p-3"
+          href="dashboard-root-staff-account-management.html">Staff Account Management</a>
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-outline-primary" id="sidebarToggle">☰</button>
+          &nbsp;&nbsp;&nbsp;
+          <div class="nav-item active"><a class="nav-link" href="index.html"><img src="assets/img/logo.png"
+                width="50rem">Mustang Agency</a></div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item active"><a class="nav-link">Hi, Username (Root account)</a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+
+            </ul>
+            <button class="btn btn-outline-primary" id="sidebarToggle" onclick="signOut()">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container-fluid">
+        <br>
+
+        <div class="col-sm-6">
+          <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="card-body">
+              <div class="form-comments">
+                <div class="title-box-2">
+                  <button onclick="rootAccM()"="submit" class="btn btn-outline-primary">Back</button>
+                  <br>&nbsp;
+                  <h5 class="title-left">
+                    Staff Account Management
+                  </h5>
+                  
+                  <form action="#!" style="text-align: right;">
+                    <button class="btn btn-primary" onclick="editButton()">
+                      <h7>Edit</h7>
+                    </button>
+                  </form>
+
+                  <!-- <form action="dashboard-staff-pending-account-requests-professional.html" style="text-align: right;">
+                                        <button class="btn btn-primary" type="submit"><h7>Professional Account Request</h7></button>
+                                      </form> -->
+                  <br>
+                </div>
+                <form class="form-mf">
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>First Name</b>
+                        <input id="stafffirstname" type="text" value="Sai Sambhu Prasad" readonly required
+                        onkeyup="notEmpty()">
+                      </div>
+                      <span id="sfn" style="color: red;"></span>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>Last Name</b>
+                        <input id="stafflastname" type="text" value="Kalaga" readonly required
+                          onkeyup="notEmpty()">
+                        <br><span id="sln" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <b>Date of Birth</b>
+                        <input id="staffdob" type="date" value="2001-09-27" readonly required
+                          onkeyup="notEmpty()">
+                        <br><span id="sdob" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>Email Address</b>
+                        <input id="staffemail" type="email" value="skalaga@smu.edu" readonly required
+                          onkeyup="notEmpty()">
+                        <br><span id="semail" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                        <b>Phone Number</b>
+                        <input id="staffphnnum" type="text" value="1234567890" readonly required
+                          onkeyup="phoneval()">
+                        <br><span id="warning" style="color: red;"></span>
+                      </div>
+                    </div>
+        
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        <label for="staffusername">Staff Username: </label>
+                        <span id="staffusername"></span>
+                      </div>
+                    </div>
+                    <br>
+
+
+
+
+                    <br>
+
+                    <div class="col-md-12">
+                      <br>
+                      <button type="submit" id='save' onclick="saveEdit()" class="btn btn-outline-secondary">Save</button>
+                      <span id="savespan" style="color: red;"></span>
+
+
+                      <hr>
+                      <center><strong>ACCOUNT DEACTIVATION </strong><br><br>
+                        <button type="submit" class="btn btn-outline-secondary" id="deactivate">DEACTIVATE ACCOUNT</button>
+                      </center>
+
+                      <!-- <button type="submit" class="btn btn-secondary" onclick="companyReject()">Rejec</button> -->
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <script>
+    var isEditClicked = false;
+    function signOut() {
+      window.location = "index.html"
+    }
+  </script>
+  <script>
+    
+    function rootAccM() {
+      window.location = "dashboard-root-staff-account-management.html"
+    }
+
+    function editButton() {
+      isEditClicked = true;
+      document.getElementById("stafffirstname").removeAttribute('readonly');
+      document.getElementById("staffdob").removeAttribute('readonly');
+      document.getElementById("stafflastname").removeAttribute('readonly');
+      // document.getElementById("staffgender").removeAttribute('readonly');
+      document.getElementById("staffemail").removeAttribute('readonly');
+      document.getElementById("staffphnnum").removeAttribute('readonly');
+      // document.getElementById("staffaddress").removeAttribute('readonly');
+      // document.getElementById("staffcity").removeAttribute('readonly');
+      // document.getElementById("staffstate").removeAttribute('readonly');
+      // document.getElementById("staffzipcode").removeAttribute('readonly');
+      // document.getElementById("staffcountry").removeAttribute('readonly');
+      // document.getElementById("companyzipcode").removeAttribute('readonly');
+      // document.getElementById("companycountry").removeAttribute('readonly');
+      // document.getElementById("companywebsite").removeAttribute('readonly');
+      // document.getElementById("staffrole").removeAttribute('readonly');
+      notEmpty();
+    }
+
+    function saveEdit(){
+      if (!notEmpty()){
+        document.getElementById("savespan").innerHTML = "Satisfy all the above conditions"
+        return
+      }
+      document.getElementById("savespan").innerHTML = ""
+
+
+
+      isEditClicked = false;
+      document.getElementById("stafffirstname").setAttribute('readonly', 'true');
+      document.getElementById("staffdob").setAttribute('readonly', 'true');
+      document.getElementById("stafflastname").setAttribute('readonly', 'true');
+      // document.getElementById("staffgender").setAttribute('readonly', 'true');
+      document.getElementById("staffemail").setAttribute('readonly', 'true');
+      document.getElementById("staffphnnum").setAttribute('readonly', 'true');
+    
+    }
+
+    function phoneval() {
+      let flag = true;
+      var inputNumbersValue = document.getElementById("staffphnnum").value.replace(/\D/g, ''); // Remove all non-digits
+      if (inputNumbersValue.length == 10) { // Ensure it does not exceed 10 digits
+        var formattedInputValue = '';
+        var x = inputNumbersValue.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        // Only format if there are at least some digits
+        if (x) {
+          // Construct the formatted string as per the matched groups
+          formattedInputValue = x[1] ? '(' + x[1] : '';
+          formattedInputValue += x[2] ? ')' + x[2] : '';
+          formattedInputValue += x[3] ? '-' + x[3] : '';
+        }
+        document.getElementById("staffphnnum").value = formattedInputValue;
+        document.getElementById("warning").innerHTML = "";
+      } else {
+        document.getElementById("warning").innerHTML = "Should Have 10 Digits";
+        flag = false;
+      }
+
+      return flag;
+    }
+
+    function validateDOB() {
+      let flag = true;
+      var dob = document.getElementById("staffdob").value;
+      var dobDate = new Date(dob);
+      var currentDate = new Date();
+      var today = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+      var maxDate = new Date();
+      maxDate.setFullYear(maxDate.getFullYear() - 120); // Calculate date 120 years back
+
+      if (dob == "") {
+        document.getElementById("sdob").innerHTML = 'DOB should not be empty';
+        flag = false;
+      } else if (dobDate >= today) {
+        document.getElementById("sdob").innerHTML = 'DOB cannot be a future date';
+        flag = false;
+      } else if (dobDate < maxDate) {
+        document.getElementById("sdob").innerHTML = 'DOB cannot be more than 120 years ago';
+        flag = false;
+      } else {
+        document.getElementById("sdob").innerHTML = '';  // Clear error message if input is valid
+        flag = true;
+      }
+
+      return flag;
+    }
+
+    function notEmpty() {
+      let flag = true;
+
+      if (document.getElementById("stafffirstname").value == "") {
+        document.getElementById("sfn").innerHTML = 'First Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("sfn").innerHTML = '';
+      }
+
+      if (document.getElementById("stafflastname").value == "") {
+        document.getElementById("sln").innerHTML = 'Last Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("sln").innerHTML = '';
+      }
+
+      let emailp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      if ((document.getElementById("staffemail").value == "") || (!emailp.test(document.getElementById("staffemail").value))) {
+        document.getElementById("semail").innerHTML = 'Enter Valid Email';
+        flag = false;
+      } else {
+        document.getElementById("semail").innerHTML = '';
+      }
+
+      return flag && validateDOB() && phoneval()
+    
+    }
+
+
+
+  </script>
+  <script src="js/root-staff-account-management-viewdetails.js"></script>
+</body>
+
+</html>

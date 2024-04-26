@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mustang Agency - Sign Up</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html"><img src="assets/img/logo.png" width="50rem">Mustang Agency</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Sign Up</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <div class="form-comments">
+      <div class="title-box-2">
+        <h3 class="title-left">
+          Professional Sign Up
+        </h3>
+        <form action="sign-up.html" style="text-align: right;">
+          <button class="btn btn-primary">Company Sign Up?</button>
+        </form>
+      </div>
+      <form class="form-mf" id="signupForm">
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <div class="form-group">
+            <b>First Name*</b>
+            <input type="text" class="form-control input-mf" id="Profirstname" placeholder="Enter your First Name"
+              onkeyup="notEmpty()" required>
+            <span id="pfn" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <div class="form-group">
+            <b>Last Name*</b>
+            <input type="text" class="form-control input-mf" id="Prolastname" placeholder="Enter your Last Name"
+              onkeyup="notEmpty()" required>
+            <span id="pln" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <div class="form-group">
+            <b>Date of Birth*</b>
+            <input type="date" class="form-control input-mf" id="ProDOB" placeholder="Enter your Date Of Birth"
+              onchange="validateDOB()" required>
+            <span id="pdob" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <b>Email*</b>
+            <input type="email" class="form-control input-mf" id="ProEmail" placeholder="Enter Your Email"
+              onkeyup="notEmpty()" required>
+            <span id="pe" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <b>Phone Number*</b>
+            <input type="text" class="form-control input-mf" id="phoneno" onkeyup="phoneval()"
+              placeholder="Phone Number *" required>
+            <span id="phno" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <b>Your Address*</b>
+            <input type="text" class="form-control input-mf" id="Proaddress" placeholder="Address *"
+              onkeyup="notEmpty()" required>
+            <span id="padd" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <b>City/ Town*</b>
+            <input type="text" class="form-control input-mf" id="Procity" placeholder="City/Town *" onkeyup="notEmpty()"
+              required>
+            <span id="pcity" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <b>State*</b>
+            <input type="text" class="form-control input-mf" id="Prostate" placeholder="State *" onkeyup="notEmpty()"
+              required>
+            <span id="pstate" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <b>Zip Code*</b>
+            <input type="text" class="form-control input-mf" id="Prozipcode" placeholder="Zip Code *"
+              onkeyup="notEmpty()" required>
+            <span id="pzc" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <b>Country*</b>
+            <input type="text" class="form-control input-mf" id="Procountry" placeholder="Country *"
+              onkeyup="notEmpty()" required>
+            <span id="pcountry" style="color: red;"></span>
+          </div>
+        </div>
+        <br>
+        <div class="col-md-12 mb-3">
+          <div class="form-group">
+            <b>Preferred Username*</b>
+            <input type="text" class="form-control input-mf" id="ProUsername" placeholder="Preferred Username"
+              onkeyup="notEmpty()" pattern="^[a-zA-Z][a-zA-Z0-9]{7,}" required
+              title="Minimum 8 Characters And Should Start With Alphabet">
+            <span id="pun" style="color: red;"></span>
+          </div>
+        </div>
+
+
+        <!-- <div class="col-md-6 mb-3"> -->
+        <!-- <div class="form-group"> -->
+        &nbsp;<h4>Qualifications</h4>
+        <!-- </div> -->
+        <!-- <div class="col-md-6 mb-3"> -->
+        <!-- <div class="form-group"> -->
+
+        <div class="col-md-12 mb-3">
+          <div class="form-group">
+            <b>Degree*</b>
+            <input type="text" class="form-control input-mf" id="ProDegree" placeholder="Degree Level"
+              onkeyup="notEmpty()" required>
+            <span id="pdegree" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <div class="form-group">
+            <b>Institution*</b>
+            <input type="text" class="form-control input-mf" id="ProInstitution" placeholder="Institution Name"
+              onkeyup="notEmpty()" required>
+            <span id="pdegree" style="color: red;"></span>
+          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <div class="form-group">
+            <b>Date of Award*</b>
+            <input type="month" class="form-control input-mf" id="ProDateAward" placeholder=""
+              onkeyup="notEmpty()" required>
+            <span id="pdateaward" style="color: red;"></span>
+          </div>
+        </div>
+
+
+        &nbsp;<label id="categoryLabel" for="categoryField"><b>Category</b></label>
+        <input type="text" class="form-control input-mf" id="categoryField" placeholder="Name of Category"
+          onkeyup="notEmpty()" />
+        <span id="cl" style="color: red;"></span>
+
+        &nbsp;<label id="keywordsLabel" for="keywordsField"><b>Keywords/ Key Phrases</b></label>
+        <input type="text" class="form-control input-mf" id="keywordsField" onkeyup="notEmpty()"
+          placeholder="List of Keywords/ Key Phrases seperated by commas" />
+        <span id="kl" style="color: red;"></span>
+        <br> &nbsp;
+
+        <button id="addButton" type="button" onclick="add()" class="btn btn-outline-primary">Add</button>
+        <br> &nbsp;
+
+        <!-- </style> -->
+        <table class="table table-hover" style="text-align: center;" id="myTable">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Keywords/ Key Phrases</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- EMPTY-->
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <br>&nbsp;
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Terms And Conditions Agreement</label>
+
+          <br>
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Privacy Policy Agreement</label>
+        </div>
+
+        <br>
+
+        <div class="col-md-12">
+          <p id="infodisplay" style="color: red;"></p>
+          <br>
+          <button type="submit" onclick="notEmpty()" class="button button-a button-big button-rouded">Sign Up</button>
+          <p id="serverResponse" style="color: red;"></p>
+        </div>
+      </div>
+      </form>
+    </div>
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+
+  <script>
+    var count = 1;
+    function add() {
+      var category = document.getElementById("categoryField").value;
+      var keyword = document.getElementById("keywordsField").value;
+
+      if (category == "") {
+        document.getElementById("cl").innerHTML = 'Category Should Not Be Empty';
+      } else {
+        document.getElementById("cl").innerHTML = '';
+      }
+
+      if (keyword == "") {
+        document.getElementById("kl").innerHTML = 'Keyword Should Not Be Empty';
+      } else {
+        document.getElementById("kl").innerHTML = '';
+      }
+
+      if (category.length == 0 || keyword.length == 0) {
+        return;
+      }
+
+      var table = document.getElementById("myTable");
+      var row = table.insertRow(count++);
+      var col1 = row.insertCell(0);
+      var col2 = row.insertCell(1);
+      var col3 = row.insertCell(2);
+
+      col1.innerHTML = category;
+      col2.innerHTML = keyword;
+      col3.innerHTML = '<button onclick="removeRow(this)" class="btn btn-danger">Remove</button>';
+
+
+      document.getElementById("categoryField").value = "";
+      document.getElementById("keywordsField").value = "";
+
+      return false;
+    }
+
+    function removeRow(btn) {
+      var row = btn.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+      count--;  // Decrement the count of rows
+    }
+
+    function validate() {
+      if (count < 3) {
+        document.getElementById("infodisplay").innerHTML = 'Add Minimum 2 Qualifications';
+      } else {
+        if (notEmpty()) {
+          window.location = "index.html";
+        } else {
+          document.getElementById("infodisplay").innerHTML = 'Satisfy all the above fields to sign up';
+        }
+      }
+    }
+
+    function validateDOB() {
+      var dob = document.getElementById("ProDOB").value;
+      var dobDate = new Date(dob);
+      var currentDate = new Date();
+      var today = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+      var maxDate = new Date();
+      maxDate.setFullYear(maxDate.getFullYear() - 120); // Calculate date 120 years back
+
+      if (dob === "") {
+        document.getElementById("pdob").innerHTML = 'DOB should not be empty';
+      } else if (dobDate >= today) {
+        document.getElementById("pdob").innerHTML = 'DOB cannot be a future date';
+      } else if (dobDate < maxDate) {
+        document.getElementById("pdob").innerHTML = 'DOB cannot be more than 120 years ago';
+      } else {
+        document.getElementById("pdob").innerHTML = '';  // Clear error message if input is valid
+      }
+    }
+
+    function phoneval() {
+      let flag = true;
+
+      var inputNumbersValue = document.getElementById("phoneno").value.replace(/\D/g, ''); // Remove all non-digits
+      if (inputNumbersValue.length == 10) { // Ensure it does not exceed 10 digits
+        var formattedInputValue = '';
+        var x = inputNumbersValue.match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        // Only format if there are at least some digits
+        if (x) {
+          // Construct the formatted string as per the matched groups
+          formattedInputValue = x[1] ? '(' + x[1] : '';
+          formattedInputValue += x[2] ? ')' + x[2] : '';
+          formattedInputValue += x[3] ? '-' + x[3] : '';
+        }
+        document.getElementById("phoneno").value = formattedInputValue;
+        document.getElementById("phno").innerHTML = "";
+      } else {
+        document.getElementById("phno").innerHTML = "Should Have 10 Digits";
+        flag = false;
+      }
+
+      return flag;
+
+    }
+
+    function notEmpty() {
+      let flag = true;
+
+      if (document.getElementById("Profirstname").value == "") {
+        document.getElementById("pfn").innerHTML = 'First Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pfn").innerHTML = '';
+      }
+
+      if (document.getElementById("Prolastname").value == "") {
+        document.getElementById("pln").innerHTML = 'Last Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pln").innerHTML = '';
+      }
+
+      if (document.getElementById("ProDOB").value == "") {
+        document.getElementById("pdob").innerHTML = 'DOB Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pdob").innerHTML = '';
+      }
+
+      let emailp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      if ((document.getElementById("ProEmail").value == "") || (!emailp.test(document.getElementById("ProEmail").value))) {
+        document.getElementById("pe").innerHTML = 'Enter Valid Email';
+        flag = false;
+      } else {
+        document.getElementById("pe").innerHTML = '';
+      }
+
+      if (document.getElementById("ProDOB").value == "") {
+        document.getElementById("pdob").innerHTML = 'DOB Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pdob").innerHTML = '';
+      }
+
+      if (document.getElementById("Proaddress").value == "") {
+        document.getElementById("padd").innerHTML = 'Address Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("padd").innerHTML = '';
+      }
+
+      if (document.getElementById("Procity").value == "") {
+        document.getElementById("pcity").innerHTML = 'City Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pcity").innerHTML = '';
+      }
+
+      if (document.getElementById("Prostate").value == "") {
+        document.getElementById("pstate").innerHTML = 'State Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pstate").innerHTML = '';
+      }
+
+      if (!/[0-9]{5,9}/.test(document.getElementById("Prozipcode").value)) {
+        document.getElementById("pzc").innerHTML = 'Enter Proper Zip Code';
+        flag = false;
+      } else {
+        document.getElementById("pzc").innerHTML = '';
+      }
+
+      if (document.getElementById("Procountry").value == "") {
+        document.getElementById("pcountry").innerHTML = 'Country Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pcountry").innerHTML = '';
+      }
+
+      let pattern = /^[a-zA-Z][a-zA-Z0-9]{7,}$/;
+      if (pattern.test(document.getElementById("ProUsername").value)) {
+        document.getElementById("pun").innerHTML = '';
+      } else {
+        document.getElementById("pun").innerHTML = 'Not A Valid Username';
+        flag = false;
+      }
+
+      if (document.getElementById("ProDegree").value == "") {
+        document.getElementById("pdegree").innerHTML = 'Institution Name Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pdegree").innerHTML = '';
+      }
+
+      if (document.getElementById("ProDateAward").value == "") {
+        document.getElementById("pdateaward").innerHTML = 'Date of Award Should Not Be Empty';
+        flag = false;
+      } else {
+        document.getElementById("pdateaward").innerHTML = '';
+      }
+
+      return (phoneval() && flag);
+
+    }
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="js/professional-sign-up.js"></script>
+
+</body>
+
+</html>
